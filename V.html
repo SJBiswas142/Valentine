@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Valentine’s Day 💝</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: "Comic Sans MS", "Arial", sans-serif;
+        background: #ffb3c6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        text-align: center;
+    }
+
+    .card {
+        background: #ffb3c6;
+        padding: 20px;
+        max-width: 360px;
+        width: 100%;
+    }
+
+    h1 {
+        color: #800f2f;
+        font-size: 1.4rem;
+        line-height: 1.5;
+        margin-bottom: 30px;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 12px 18px;
+        border-radius: 25px;
+        border: none;
+        cursor: pointer;
+        width: 120px;
+    }
+
+    .yes {
+        background: #ff4d6d;
+        color: white;
+        font-weight: bold;
+    }
+
+    .no {
+        background: #adb5bd;
+        color: black;
+        font-weight: bold;
+    }
+
+    img {
+        width: 250px;
+        max-width: 90%;
+        margin-top: 20px;
+        border-radius: 15px;
+        display: none;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1 id="question">
+        Between quiet stars and borrowed light,<br>
+        In all the small moments that feel just right,<br>
+        If time could pause and choose a sign,<br>
+        I’d hope it points to you and mine.<br>
+        So hear this wish I quietly design,<br><br>
+        Will you be my Valentine? 💕
+    </h1>
+
+    <div class="buttons" id="buttons">
+        <button class="yes" onclick="sayYes()">Yes 💖</button>
+        <button class="no" onclick="sayNo()">No 😔</button>
+    </div>
+
+    <img id="image" src="" alt="Valentine Image">
+
+    <audio id="music"></audio>
+</div>
+
+<script>
+function sayYes() {
+    document.getElementById("question").innerHTML =
+        "Yayyy!! 💖💖<br>Thank you for making my day.<br><b>Happy Valentine’s Day Baby!!</b>";
+    document.getElementById("question").style.color = "#c9184a";
+
+    document.getElementById("buttons").style.display = "none";
+
+    const img = document.getElementById("image");
+    img.src = "4.webp";   // put image in same folder
+    img.style.display = "block";
+
+    const music = document.getElementById("music");
+    music.src = "happy.mp3"; // put music in same folder
+    music.play().catch(err => console.log("Audio blocked"));
+
+}
+
+function sayNo() {
+    document.getElementById("question").innerHTML =
+        "OOPS!!! That was a Yes by default 😘😘<br>You’re my Valentine anyway…<br>Thank you 😊❤️❤️";
+    document.getElementById("question").style.color = "#6a040f";
+
+    document.getElementById("buttons").style.display = "none";
+
+    const img = document.getElementById("image");
+    img.src = "5.webp";
+    img.style.display = "block";
+
+    const music = document.getElementById("music");
+    music.src = "aww.mp3";
+    music.play().catch(err => console.log("Audio blocked"));
+
+}
+</script>
+
+</body>
+</html>
